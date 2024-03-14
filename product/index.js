@@ -3,7 +3,7 @@ let products=JSON.parse(localStorage.getItem("data"))||[]
 console.log("products",products);
 
 let display=()=>{
-
+    document.getElementById("box").innerHTML="";
     products.map((ele)=>{
         let title=document.createElement("h2")
         title.innerHTML=ele.title
