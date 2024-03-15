@@ -2,9 +2,15 @@
 let products=JSON.parse(localStorage.getItem("data"))||[]
 console.log("products",products);
 
+let Deleteproduct=(i)=>{
+products.splice(i,1)
+display()
+localStorage.setItem("data", JSON.stringify(products));
+}
+
 let display=()=>{
     document.getElementById("box").innerHTML="";
-    products.map((ele)=>{
+    products.map((ele,i)=>{
         let title=document.createElement("h2")
         title.innerHTML=ele.title
 
@@ -14,8 +20,12 @@ let display=()=>{
         let img=document.createElement("img")
         img.src=ele.img
 
+        let btn=document.createElement("button")
+        btn.innerHTML="Delete"
+
+        btn.addEventListener("click",()=>Deleteproduct(i))
         let div=document.createElement("div")
-        div.append(img,title,price)
+        div.append(img,title,price,btn)
         document.getElementById("box").append(div)
     })
    
