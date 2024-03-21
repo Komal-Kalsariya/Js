@@ -18,22 +18,15 @@ let ui=(data)=>{
         let thumbnail=document.createElement("img")
         thumbnail.src=ele.thumbnail
 
-        let description=document.createElement("p")
-        description.innerHTML=ele.description
-
-        let rating=document.createElement("p")
-        rating.innerHTML=ele.rating
-
-        let stock=document.createElement("p")
-        stock.innerHTML=ele.stock
-
-        let brand=document.createElement("p")
-        brand.innerHTML=ele.brand
+       
 
         let div=document.createElement("div")
-        div.append(thumbnail,id,title,price,description,rating,stock,brand)
+        div.append(title,thumbnail,`price:`,price)
         div.setAttribute("class","boxe")
         id.setAttribute("class","id")
+        title.setAttribute("class","title")
+        price.setAttribute("class","Price")
+        thumbnail.setAttribute("class","thumbnail")
         document.getElementById("box1").append(div)
 
     })
