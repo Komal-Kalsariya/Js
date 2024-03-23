@@ -9,17 +9,16 @@ const signup=(e)=>{
         mail:document.getElementById("mail").value,
         pass:document.getElementById("pass").value
     }
-      let usermail=/^[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
-
-     if(!(usermail.test(mail))){
-       alert("please enetr valid Email Address");
-         return
-       }
+    if((sign.mail==null || sign.mail.length==0) ||(sign.pass==null || sign.pass.length==0) ||(sign.user==null || sign.user.length==0)){
+            alert("please valid")
+            return
+        }
+        
 
     signups.push(sign)
-    console.log(signups)
-    localStorage.setItem("datas",JSON.stringify(signups))
 
+    localStorage.setItem("datas",JSON.stringify(signups))
+    window.location.href="/project/index.html"
 
 }
 
